@@ -135,62 +135,7 @@ def main():
     # Now plot
     createPlot10Days(stockPricesLastTen, regressionLineLastTen, stockPricesPrevLastTen, regressionLinePrevLastTen, sigma_last_ten, sigma_prev_last_ten, stock_name)
     createPlot20Days(stockPricesLastTen, stockPricesPrevLastTen, regressionLineLastTwenty, sigma_last_twenty, stock_name)
-    '''
-    days_last_20 = np.arange(0, len(stockPricesLastTwenty), 1, dtype=int)
-    days_last_10 = np.arange(10, 20, 1, dtype=int)
-    days_prev_last_10 = np.arange(0, 10, 1, dtype=int)
-    days_next_10 = np.arange(days_last_10[-1], days_last_10[-1]+10, 1, dtype=int)
-
-    #plt.plot(days_last_20, stockPricesLastTwenty, 'or') 
-
   
-    plt.plot(days_last_10, stockPricesLastTen, 'ok') 
-    plt.plot(days_last_10, regressionLineLastTen["points"],"k")
-    plt.plot(days_last_10, regressionLineLastTen["points"]+sigma_last_ten,"--k")
-    plt.plot(days_last_10, regressionLineLastTen["points"]+2*sigma_last_ten,"--k")
-    plt.plot(days_last_10, regressionLineLastTen["points"]+3*sigma_last_ten,"--k")
-    plt.plot(days_last_10, regressionLineLastTen["points"]-sigma_last_ten,"--k")
-    plt.plot(days_last_10, regressionLineLastTen["points"]-2*sigma_last_ten,"--k")
-    plt.plot(days_last_10, regressionLineLastTen["points"]-3*sigma_last_ten,"--k")
-    
-    plt.plot(days_prev_last_10, stockPricesPrevLastTen, 'ob') 
-    plt.plot(days_prev_last_10, regressionLinePrevLastTen["points"],"b")
-    plt.plot(days_prev_last_10, regressionLinePrevLastTen["points"]+sigma_prev_last_ten,"--b")
-    plt.plot(days_prev_last_10, regressionLinePrevLastTen["points"]+2*sigma_prev_last_ten,"--b")
-    plt.plot(days_prev_last_10, regressionLinePrevLastTen["points"]+3*sigma_prev_last_ten,"--b")
-    plt.plot(days_prev_last_10, regressionLinePrevLastTen["points"]-sigma_prev_last_ten,"--b")
-    plt.plot(days_prev_last_10, regressionLinePrevLastTen["points"]-2*sigma_prev_last_ten,"--b")
-    plt.plot(days_prev_last_10, regressionLinePrevLastTen["points"]-3*sigma_prev_last_ten,"--b")
-
-    plt.plot(days_last_20, regressionLineLastTwenty["points"],"y")
-    plt.plot(days_last_20, regressionLineLastTwenty["points"]+sigma_last_twenty,"--y")
-    plt.plot(days_last_20, regressionLineLastTwenty["points"]+2*sigma_last_twenty,"--y")
-    plt.plot(days_last_20, regressionLineLastTwenty["points"]+3*sigma_last_twenty,"--y")
-    plt.plot(days_last_20, regressionLineLastTwenty["points"]-sigma_last_twenty,"--y")
-    plt.plot(days_last_20, regressionLineLastTwenty["points"]-2*sigma_last_twenty,"--y")
-    plt.plot(days_last_20, regressionLineLastTwenty["points"]-3*sigma_last_twenty,"--y")
-
-    # Projecting ahead
-    plt.plot(days_next_10, regressionLineLastTen["pointsNext10"],"k")
-    plt.plot(days_next_10, regressionLineLastTen["pointsNext10"]+sigma_last_ten,"--k")
-    plt.plot(days_next_10, regressionLineLastTen["pointsNext10"]+2*sigma_last_ten,"--k")
-    plt.plot(days_next_10, regressionLineLastTen["pointsNext10"]+3*sigma_last_ten,"--k")
-    plt.plot(days_next_10, regressionLineLastTen["pointsNext10"]-sigma_last_ten,"--k")
-    plt.plot(days_next_10, regressionLineLastTen["pointsNext10"]-2*sigma_last_ten,"--k")
-    plt.plot(days_next_10, regressionLineLastTen["pointsNext10"]-3*sigma_last_ten,"--k")
-
-    
-    plt.plot(days_next_10, regressionLineLastTwenty["pointsNext10"],"y")
-    plt.plot(days_next_10, regressionLineLastTwenty["pointsNext10"]+sigma_last_twenty,"--y")
-    plt.plot(days_next_10, regressionLineLastTwenty["pointsNext10"]+2*sigma_last_twenty,"--y")
-    plt.plot(days_next_10, regressionLineLastTwenty["pointsNext10"]+3*sigma_last_twenty,"--y")
-    plt.plot(days_next_10, regressionLineLastTwenty["pointsNext10"]-sigma_last_twenty,"--y")
-    plt.plot(days_next_10, regressionLineLastTwenty["pointsNext10"]-2*sigma_last_twenty,"--y")
-    plt.plot(days_next_10, regressionLineLastTwenty["pointsNext10"]-3*sigma_last_twenty,"--y")
-
-    plt.show()
-    '''
-
     return
 
 if __name__ == "__main__":
