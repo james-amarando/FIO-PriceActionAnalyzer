@@ -2,7 +2,7 @@
 import matplotlib.pyplot as plt
 
 
-def createPlot(ticker, stock_prices_dates, stock_prices_vals, regression_line_dates, regression_line_vals, sigma, num_sigmas=3, plot_title_info=""):
+def createPlot(ticker, stock_prices_dates, stock_prices_vals, regression_line_dates, regression_line_vals, sigma, plot_title, filename, num_sigmas=3, show=False):
     
     plt.figure(figsize=(12,4))
 
@@ -17,11 +17,13 @@ def createPlot(ticker, stock_prices_dates, stock_prices_vals, regression_line_da
         plt.plot(regression_line_dates, regression_line_vals+i*sigma, "--k")
         plt.plot(regression_line_dates, regression_line_vals-i*sigma, "--k")
 
-    plt.title(ticker+plot_title_info)
+    plt.title(plot_title)
     plt.ylabel("Stock Price ($)")
     plt.xlabel("Date")
-    plt.savefig(ticker+plot_title_info+".png")
-    plt.show()
+    plt.savefig(filename)
+    if show:
+        plt.show()
+    plt.close()
 
     return
 

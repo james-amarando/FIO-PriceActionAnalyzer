@@ -5,8 +5,6 @@ from scipy import stats
 def calculateRegressionLine(stockPrices):
     x = np.arange(0, len(stockPrices), 1, dtype=int)
     y = stockPrices
-    print(x)
-    print(y)
     gradient, intercept, r_value, p_value, std_err = stats.linregress(x,y)
     regressionLine = {}
     regressionLine["gradient"] = gradient
@@ -50,5 +48,4 @@ def analyzeStockPricesV1(stockPrices, alert_period=3, alert_sigma_thresh=2, aler
     stockAnalysis["alert_num_instances_meas"] = alert_num_instances_meas
     stockAnalysis["alert"] = alert
 
-    print(stockAnalysis)
     return stockAnalysis
