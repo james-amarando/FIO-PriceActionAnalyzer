@@ -3,7 +3,7 @@ import yfinance as yf
 
 def getPriceData(ticker, num_days=10):
     period = str(num_days) + "d"
-    priceData = yf.download(tickers=ticker, period=period, interval="1d")
+    priceData = yf.download(tickers=ticker, period=period, interval="1d", progress=False)
     return priceData
 
 

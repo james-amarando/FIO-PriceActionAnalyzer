@@ -1,11 +1,15 @@
-import trendUtil
-import priceUtil
-import plotUtil
+import utils.trendUtil as trendUtil
+import utils.priceUtil as priceUtil
+import utils.plotUtil as plotUtil
+import utils.tickerUtil as tickerUtil
+import utils.googleSheetUtil as googleSheetUtil
+
 import datetime
 import os
-import tickerUtil   
-import utils.googleSheetUtil as googleSheetUtil
 import time
+import logging
+
+logger = logging.getLogger(__name__)
 
 import numpy as np
 
@@ -36,7 +40,7 @@ def checkSingle(ticker, num_days, alert_period=3, alert_sigma_thresh=2, alert_nu
         )
 
     if stockAnalysis["alert"]:
-        print("Alert for: "+ticker)
+        logger.info("Alert for: "+ticker)
         plotUtil.createPlot(
             ticker = ticker, 
             stock_prices_dates = stockDatesForAnalysis, 
@@ -57,7 +61,7 @@ def checkSingle(ticker, num_days, alert_period=3, alert_sigma_thresh=2, alert_nu
 def checkMultiple(stocksToCheck, alert_period, alert_sigma_thresh, alert_num_instances_thresh, price_measure_to_use, num_days=10):
     stocksWithAlerts = []
     for ticker in stocksToCheck:
-        print("\nChecking: "+ticker+" ("+str(num_days)+" day window)")
+        logger.info("Checking: "+ticker+" ("+str(num_days)+" day window)")
         alert = checkSingle(
             ticker = ticker, 
             num_days = num_days, 
@@ -122,7 +126,7 @@ def reportToGoogleSheet(tenDayAlerts,twentyDayAlerts,fourtyDayAlerts,date_str,al
     for i in range(0,len(sheetRows)):
         row_num = i + 1  # Google isn't 0 indexed
         sheetRow = sheetRows[i]
-        print("About to write row: "+str(sheetRow))
+        logger.debug("About to write row: "+str(sheetRow))
         googleSheetUtil.writeFullRow(
             sheet = sheet,
             spreadsheet_id = spreadsheet_id,
@@ -187,21 +191,32 @@ def main():
         alert_sigma_thresh = alert_sigma_thresh,
         alert_num_instances_thresh = alert_num_instances_thresh)
 
-    # Print results to command line
-    print("\n===========================")
-    print("Analysis: "+datetime.datetime.today().strftime("%Y-%m-%d"))
-    print("===========================")
-    print("10 Day Regression Alerts:")
-    print(tenDayAlerts)
-    print("\n")
-    print("20 Day Regression Alerts:")
-    print(twentyDayAlerts)
-    print("\n")
-    print("40 Day Regression Alerts:")
-    print(fourtyDayAlerts)
-    print("\n")
+    # Log results to command line
+    logger.info("===========================")
+    logger.info("Analysis: "+datetime.datetime.today().strftime("%Y-%m-%d"))
+    logger.info("===========================")
+    logger.info("10 Day Regression Alerts:")
+    logger.info(tenDayAlerts)
+    logger.info("20 Day Regression Alerts:")
+    logger.info(twentyDayAlerts)
+    logger.info("40 Day Regression Alerts:")
+    logger.info(fourtyDayAlerts)
     
     return
 
 if __name__ == "__main__":
+    verbose = False
+    # Setup logger
+    logfile = os.path.join("logs","wrapper_analyzeStocks.log")
+    if os.path.exists(logfile):
+        os.remove(logfile)  
+        
+    logging.getLogger('googleapicliet.discovery_cache').setLevel(logging.ERROR)
+    logger_format = "%(asctime)s %(levelname)-2s %(name)s:%(funcName)s() : %(message)s"
+    logging_level = logging.INFO
+    if verbose:
+        logging.basicConfig(level=logging_level, format=logger_format)
+    else:
+        logging.basicConfig(level=logging_level, format=logger_format, filename=logfile)
+
     main()
