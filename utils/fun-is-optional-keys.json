@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "fun-is-optional",
+  "private_key_id": "a0953fb780013f4c5960c2acc3a6c20bee9db883",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCNVHkWG82bjYQF\nXsCgKVT8NlHJM62C1LYWeho/y470dNlccPFCUYKiH3M/jh+Eo2pl2p7kuWz7u30Q\nbQScn2srPsgEXWMDo5P7qBJ/z+8BmplrFTA+RtxJpOf9W5eArhyIJY51xOgpUXiL\nkEHO3X5MLAEQZGwjVBOS1NBpLtOm8dU0DtGveDsbhDAZ+4QUvQtRkx5dI2FAYHDH\n3zsRYGxEwSI8cMTco/+UrzmlpZj2/bPO1J9i7tmxzDoyVzF3ziZ/0qozu3+7wtfp\n1LXFHmc0L0Y4Bf3ephtuiIU2FWOSyubCT7Nx6RH9+el4OwiwHrswp3uKbvE1CmT5\nakFStjwdAgMBAAECggEAG04RedvDyNSZx+bTTO5HWNYOzZJiKLd7eZK8HQyxMRod\nP46jkgZI+JUecU4+WSQwY37OOY74lxcVVdXWMQNc03VU9ADt5w9UwSdq8Y4lFVh+\n4REuKa4Lk9/cIVcviWE6KnSlFixFlWwD3+TuTe79nm5XA0l/mgC9ql3a6SNuqV9g\nq6XjVDOP6r2T3mgukmWv4J/9ogxb/5udPSEsRWx9DMuGuHRcehsui/VbRu+rMxdx\nwguNC0lHo1QhmjQbUG4fuL/eiaOlS0Igxv1CB2UwC0w7/MLKt5AnOC0fbUBrLjHV\nR+CD8jm6keHcJpmqObb3NNi1yK2UHPKRK4iEHtoC8QKBgQC+j/lBg9R7AcL6vdgZ\nU9dszn001dADGiN/vHGIf4o2oEMUa64xbxO89xU0Fu37ReJNzCQ0DyvVt5zs1ShA\nsvyS2UvbWAUzCI9OeKNpoG3NOQ1/keMBuRvRG7j0mEkL2IfJVWUUiX+uSkDy8RWX\nP3HD9yn/ERmPl80wcuqzQWU9sQKBgQC93I7aiXHreRbqvouSiBP9Ud8mjUuXxbvE\n/SqN6CDqvi7wbGOsFwpzsWHZrX2fM/PPE1PiDDeygpzoS7H+4rPiDL+09AqNCWyV\nEgYiyeEz35lXd93HJF13LSRg/+agwQpENIGcLbYwI0yNKSEmdnWUPogDJpuWujQM\nhr9KTvWkLQKBgE7OvddBTLs+JEOMBXWb/chKsO8LyYWu5qVp6k336NHkfzlPuu9I\nr5IDYOp03SCAazGfTg2VhJxS3fv3vzjajKeyY7OneCb90D40l+gT57TqdlGepJHO\n2tkkrN3CqNrURnuV7EKNBpeur6OI3lP5cfQIIH8StE51Ce+SZsuRLOxRAoGATaDc\nl+YSuiCsihaWorcY1T6gavbirY+fko+g0pzSuKhCMPNgXYCeOWeRhps0/d8UFNrm\nNUqhi090MFai1ICE5CwqRiZyGfB8gQb5k0fP2JHX9LeB6maoAI5ojXCUL64+MFz3\nkY/vKgeEyULD1yIgORjIK+GhRCOmHGkL1aorLZECgYAMh1mQOi9yzM4jUwhtS9Xm\nj88BgDr6mU4cqjvlHq+bB4Dc+met0IBZhs5nco0Hd9n/L6T2qBzScXAgawBesSSk\nwVDkmnYdhKN4Eq/UUNZXMCOEA+Rt4Af7UMMJn1T3gsSrmyiYmyKG/XiyyPmePnIG\n+ul2B37TgZHpW2kCidmBIg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "fun-is-optional-bot-writer@fun-is-optional.iam.gserviceaccount.com",
+  "client_id": "108264459988680799509",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/fun-is-optional-bot-writer%40fun-is-optional.iam.gserviceaccount.com"
+}
